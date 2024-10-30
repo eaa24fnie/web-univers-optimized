@@ -1,0 +1,2 @@
+User-agent: *
+Allow: /Sitemap: https://webunivers.frederik-n.dk/sitemap.xml

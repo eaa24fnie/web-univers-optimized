@@ -1,0 +1,885 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #f68a2c;
+    --secondary-color: #bed2d5;
+    --tertiary-color: #f2f2f2;
+    --font: "Encode Sans Expanded", sans-serif;
+}
+
+body {
+    padding: 0 10%;
+    max-width: 100%;
+    background: var(--tertiary-color);
+}
+
+h1 {
+    font-family: var(--font);
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+h2 {
+    font-family: var(--font);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding-bottom: 0.6rem;
+}
+
+h3 {
+    font-family: var(--font);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 800; 
+}
+
+h4 {
+    font-family: var(--font);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 800;  
+}
+
+/* Hver overskrift (h1 til h4) har tilpassede skriftstørrelser og -vægte. Dette er godt for hierarki og design.
+De er alle defineret som uppercase og har samme skrifttype, hvilket skaber et ensartet udseende.*/
+
+
+p {
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: 300; 
+}
+
+main {
+    display: flex;
+    width: 100%;
+}
+
+img {
+    border-radius: 20px;
+}
+
+
+
+/* header */
+
+
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header {
+    background-color: var(--tertiary-color);
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    font-size: 1.7vh;
+    font-weight: 700;
+    font-family: var(--font);
+    height: 10vh;
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-transform: uppercase;
+    padding: 0 2rem;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    z-index: 1000;
+}
+  
+.navbar li {
+    display: block;
+    position: relative;
+    float: left;
+}
+
+.navbar ul {
+    position: relative;
+    padding: 0;
+    left: 0;
+    display: none;
+} 
+
+/* 
+.navbar ul er sat til display: none, men bliver synlig ved hover på .navbar li. Dette er en enkel måde at implementere dropdown-menuer på. */
+
+.navbar li a {
+    display: block;
+    padding: 0;
+    text-decoration: none;
+    line-height: 35px;
+    color: black;
+    white-space: nowrap;
+}
+
+.navbar li ul {
+    position: absolute;
+}
+  
+.navbar li a:hover {
+    color:#dd8937;
+}
+  
+.navbar li:hover ul ul {
+    display: none;
+}
+  
+.navbar li:hover ul {
+    display: block;
+}
+
+.submenu {
+    font-size: 1.5vh;
+    font-weight: 500;
+    font-family: var(--font);
+    background-color: var(--tertiary-color);
+}
+
+.submenu li {
+    padding: 10px;
+}
+
+.søg{
+    display: block;
+    height: auto;
+    color: rgb(0, 0, 0);
+    border-radius: 1rem;
+    text-align: left;
+    padding-left: 1rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    font-family: var(--font);
+    border: 0;
+    outline: 0;
+}
+
+input.søg {
+    display: block;
+    padding: 1rem;
+    padding-left: 3rem;
+    background: rgb(227, 227, 227) url("/img/searchsort.svg") no-repeat -2rem;
+    background-origin: content-box;
+}
+
+.highlight {
+    color: var(--primary-color) !important;
+}
+
+
+
+/* body */
+
+
+
+.sides {
+    width:25%;
+}
+
+.halv {
+    max-height: 44vh;
+    min-height: 44vh;
+    margin-bottom: 2vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Brug af display: flex; i flere af sektionerne, såsom .header, .main, og .gallery, giver et fleksibelt layout, som er let at tilpasse. */
+
+.sides:nth-child(1) .halv h2 {
+    padding-bottom: 0px
+}
+
+a:visited {
+    color: inherit;
+}
+
+
+.h3 {
+    position: absolute;
+    background-color: var(--tertiary-color);
+    padding: 15px;
+    border-radius: 0.5rem;
+    margin-bottom: 15px;
+    width: 90%;
+}
+
+.h3:hover {
+    background-color: var(--primary-color);
+}
+
+.h3:hover p {
+    color: var(--tertiary-color);
+}
+
+.h3:hover h3 {
+    color: var(--tertiary-color);
+}
+
+.image-container a {
+    text-decoration: none; 
+}
+
+.image-container a:visited {
+    color: inherit;
+}
+
+.image-container {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+    
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.middle {
+    width: 50%;
+    margin: 0 1rem;
+}
+
+.stor {
+    max-height: 44vh;
+    min-height: 44vh;
+    margin-bottom: 2vh;
+    overflow: hidden;
+}
+
+.stor p a {
+    font-weight: 600;
+}
+
+.halv p a {
+    font-weight: 600;
+}
+
+.stor article {
+    padding-top: 10px;
+}
+
+.stor .image-container {
+    width: 100%;
+    height: 44vh;
+    object-fit: cover;
+}
+
+.middle-halvt {
+    display: flex;
+    object-fit: cover;
+    padding-top: 10px;
+    flex-wrap: wrap;
+}
+
+.middle-halvt img {
+    padding-right: 10px;
+    width: 50%;
+    object-fit: cover;
+    height: 20vh;
+}
+
+.middle-halvt article a {
+    text-decoration: none;
+}
+
+.middle-halvt article  {
+    width: 50%;
+}
+
+.middle-halvt article p  {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90%;
+}
+
+.readmore {
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    font-family: var(--font);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 800; 
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 0.5rem;
+    border: none;
+    width: auto;
+    position: absolute;
+}
+
+.fillimage {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 44vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+.fillimage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.artikel-tre {
+    display: flex;
+    flex-direction: column;
+}
+
+.artikel-tre img {
+    height: 200px;
+}
+
+.senestenyt {
+    width: 100%;
+    overflow: hidden;
+    padding: 50px 0 ;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    text-align: center;
+}
+
+.gallery figure {
+    max-width: 24%;
+}
+
+.gallery figure img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.senestenyt h2 {
+    text-align: center;
+    font-family: var(--font);
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 800; 
+}
+
+.popular {
+    list-style-type: none
+}
+
+.popular li {
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: 300; 
+    padding-bottom: 10px;
+}
+
+.film-pakker-boks {
+    display: flex;
+    justify-content: space-between;
+    height: 42vh;
+}
+
+.scroll {
+    overflow-y: auto;
+}
+
+.filmpakke {
+    width: 100%;
+    display: flex;
+}
+
+.h4 {
+    position: absolute;
+    font-size: 1.5vh;
+}
+
+figure.gallery {
+    margin: 5px;
+    float: left;
+    transition: 0.2s;
+    color: var(--tertiary-color);
+  }
+  
+  figure.gallery:hover {
+    transform: scale(1.1);
+}
+
+  figure.gallery a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  figure.gallery a:visited {
+    color: inherit;
+  }
+  
+  figure.gallery img {
+    height: 15vh;
+    width: 15vh;
+    object-fit: cover;
+  }
+  
+  figure.desc {
+    padding: 15px;
+    text-align: center;
+  }
+
+  figure.gallery article {
+    display: flex;
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    justify-content: center;
+  }
+
+  figure.gallery article h4 {
+    color: var(--tertiary-color);
+  }
+
+  .filmpakke:nth-child(4) .gallery:nth-child(2) {
+    background-color: var(--primary-color);
+  }
+
+
+
+  /* Footer */
+
+
+
+  footer {
+    background: var(--primary-color);
+    display: flex;
+    padding: 50px 40px 100px 40px;
+    border-radius: 20px 20px 0px 0px;
+  }
+
+  footer section article {
+    display: flex;
+    width: 40%;
+  }
+
+  .kontakt {
+    width: 80vh;
+  }
+
+  .om-os {
+    width: 100vh;
+  }
+
+  footer section article a {
+    padding-right: 20px;
+  }
+
+  .socialmedia {
+    width: 9vh;
+    padding: 10px;
+    background: var(--tertiary-color);
+  }
+
+  .email {
+    font-family: var(--font);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 800; 
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+
+
+  /* artikel */
+
+
+
+  .center a .readmore {
+    position: relative;
+  }
+
+
+  .center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .artikler {
+    height: 30vh !important;
+  }
+
+  .space {
+    padding-top: 20px;
+  }
+
+  .artikel-one-img {
+    height: 42vh;
+    width: 50% !important;
+  }
+
+  .artikel {
+    width: 75%;
+    margin: 0 1rem;
+  }
+
+  .artikel-side {
+    max-height: 21vh;
+    min-height: 21vh;
+    margin-bottom: 2vh;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .artikel-side img {
+    width: 100%;
+  }
+
+  .middle-artikel{
+    display: flex;
+    object-fit: cover;
+    padding-top: 10px;
+}
+
+.middle-artikel img {
+    padding-right: 10px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.column img {
+    height: 30vh;
+}
+
+.middle-artikel article a {
+    text-decoration: none;
+}
+
+.middle-artikel article  {
+    width: 50%;
+}
+
+.stor-artikel {
+    margin-bottom: 2vh;
+    overflow: hidden;
+}
+
+.stor-artikel p a {
+    font-weight: 600;
+}
+
+.stor-artikel article {
+    padding-top: 10px;
+}
+
+.space-artikel {
+    padding-top: 0 !important;
+}
+
+.image-container-artikel {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+    
+.image-container-artikel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.h3-artikel {
+    position: absolute;
+    background-color: var(--tertiary-color);
+    padding: 15px;
+    border-radius: 0.5rem;
+    margin-bottom: 15px;
+    width: 90%;
+}
+
+.h3-artikel h3 {
+    font-size: 1.4rem;
+}
+
+.h3-artikel p {
+    font-size: 1rem;
+}
+
+.column {
+    column-count: 2;
+    column-gap: 10px;
+}
+
+
+
+/* Anbefalinger */
+
+
+
+.main-anbefalinger {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.main-anbefalinger article {
+    width: 100%;
+}
+
+.anbefalinger {
+    padding: 0 0 50px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+}
+
+.anbefalinger h2 {
+    font-size: 2rem;
+}
+
+.full {
+    margin-bottom: 2vh;
+    overflow: hidden;
+    width: 20vh;
+}
+
+.full .image-container {
+    width:100%;
+}
+
+.full .image-container img {
+    height: 400px;
+}
+
+.pakke {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+
+/* 404 */
+
+
+
+.main-error {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-error img {
+    width: 100%;
+}
+
+.main-error article {
+    position: absolute;
+    padding-top: 25%;
+    text-align: center;
+}
+
+.main-error article h3 {
+    font-family: var(--font);
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 800; 
+}
+
+.main-error button {
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    font-family: var(--font);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 800; 
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 0.5rem;
+    border: none;
+    width: auto;
+}
+
+
+
+/* Kommende events */
+
+
+
+.kommende-events-middle {
+    width: 48%;
+    margin: 0 1rem;
+    padding: 10px 0 50px 0;
+}
+
+.kommende-events {
+    height: 100vh;
+    margin-bottom: 2vh;
+    overflow: hidden;
+}
+
+.kommende-events article {
+    padding-top: 10px;
+}
+
+.kommende-events .image-container {
+    height: 100%;
+    object-fit: cover;
+}
+
+.dato {
+    padding-bottom: 20px;
+}
+
+.events-billet {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.kommende-events article.center {
+    position: absolute;
+    width: 37%;
+    margin-top: -100px;
+}
+
+.kommende-events article.center a h5 {
+    font-size: 2rem;
+}
+
+
+
+/* Nyhedsbrev */
+
+
+
+form {
+    width: 75%;
+}
+
+.main-nyhedsbrev {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+.container {
+    padding: 20px 0;
+    background-color: #f1f1f1;
+}
+  
+  .container:nth-child(2) {
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+  
+  input[type=text], input[type=submit] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+  
+  input[type=checkbox] {
+    margin-top: 16px;
+}
+  
+  input[type=submit] {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+  
+  input[type=submit]:hover {
+    opacity: 0.8;
+}
+
+
+
+/* Nyheder */
+
+
+
+.p {
+    font-size: 1.4rem;
+}
+
+.nyheder {
+    padding-top: 50px;
+    width: 48%;
+}
+
+.nyheder h3 {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+}
+
+.nyheder p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.nyheder-img {
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.nyheder .column {
+    column-count: 2;
+    column-gap: 20px;
+}
+
+.nyheder-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
